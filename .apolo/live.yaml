@@ -1,0 +1,28 @@
+kind: live
+title: sdnext
+
+defaults:
+  life_span: 5d
+
+volumes:
+  models:
+    remote: storage:$[[ flow.project_id ]]/models
+    mount: /mnt/models
+    local: models
+  data:
+    remote: storage:$[[ flow.project_id ]]/data
+    mount: /mnt/data
+    local: data
+
+jobs:
+  stablediffusion:
+    image: vladmandic/sdnext-cuda:latest
+    name: stablediffusion
+    preset: gpu-medium
+    http_port: "7860"
+    browse: true
+    env:
+      COMMANDLINE_ARGS: --api --disable-safe-unpickle
+    volumes:
+      - ${{ volumes.models.ref_rw }}
+      - ${{ volumes.data.ref_rw }}
