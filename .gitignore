@@ -69,7 +69,7 @@ dist/
 .idea/
 /localizations
 .*/
-
+!.apolo/
 # force included
 !/models/VAE-approx
 !/models/VAE-approx/model.pt
