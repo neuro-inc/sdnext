@@ -22,7 +22,7 @@ jobs:
     http_port: "7860"
     browse: true
     env:
-      COMMANDLINE_ARGS: --api --disable-safe-unpickle
+      COMMANDLINE_ARGS: --docs
     volumes:
       - ${{ volumes.models.ref_rw }}
       - ${{ volumes.data.ref_rw }}
