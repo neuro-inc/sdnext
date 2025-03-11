@@ -22,7 +22,7 @@ jobs:
     http_port: "7860"
     browse: true
     env:
-      COMMANDLINE_ARGS: --docs
+      COMMANDLINE_ARGS: --docs --cors-origins=* --use-cuda
     volumes:
       - ${{ volumes.models.ref_rw }}
       - ${{ volumes.data.ref_rw }}
