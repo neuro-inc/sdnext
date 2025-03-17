@@ -22,7 +22,9 @@ jobs:
     http_port: "7860"
     browse: true
     env:
-      COMMANDLINE_ARGS: --docs --cors-origins=* --use-cuda
+      SD_LORA_DEBUG: true
+      COMMANDLINE_ARGS: --docs --cors-origins=* --use-cuda --debug --listen --insecure
+      HUGGING_FACE_HUB_TOKEN: secret:HF_TOKEN
     volumes:
       - ${{ volumes.models.ref_rw }}
       - ${{ volumes.data.ref_rw }}
